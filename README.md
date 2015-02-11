@@ -1,4 +1,4 @@
-# grunt-match-replace
+# grunt-translations
 
 Replace text in files using strings, regexs or functions.
 
@@ -6,13 +6,13 @@ Replace text in files using strings, regexs or functions.
 In your project's [gruntfile][getting_started] directory, run:
 
 ```bash
-npm install grunt-match-replace --save-dev
+npm install grunt-translations --save-dev
 ```
 
 Then add this line to your project's [gruntfile][getting_started]:
 
 ```javascript
-grunt.loadNpmTasks('grunt-match-replace');
+grunt.loadNpmTasks('grunt-translations');
 ```
 
 [grunt]: http://gruntjs.com/
@@ -23,10 +23,13 @@ grunt.loadNpmTasks('grunt-match-replace');
 
 
 ```javascript
-replace: {
+translations: {
   example: {
     src: ['text/*.txt'],             // source files array (supports minimatch)
     dest: 'build/text/',             // destination directory or file
+    reportPath: 'report.txt',        // path to report output (optional)
+    exclusionFile: 'exclusions.txt', // string to exclude from translation attribute identification
+    translationAttributes: ["{{t ", "{{ t ", "{{{t ", "{{{ t "], // translation attribute to search for in identified elements
     replacements: [{
       from: 'Red',                   // string replacement
       to: 'Blue'
@@ -47,7 +50,7 @@ Here's another example using [grunt.template][grunt.template], and overwriting
 original source files:
 
 ```javascript
-replace: {
+translations: {
   another_example: {
     src: ['build/*.html'],
     overwrite: true,                 // overwrite matched source files
@@ -66,7 +69,7 @@ replace: {
 
 ### replace
 
-*replace* is the top level task that goes in your `grunt.initConfig({})`. It is
+*translations* is the top level task that goes in your `grunt.initConfig({})`. It is
 a [multi-task][multitask], meaning that it must contain targets, which you can
 name anything you like.
 
@@ -105,6 +108,20 @@ grunt-text-replace will throw an error. You can only use one or the other.
 *replacements* is an array of *from* and *to* replacements. See the
 [examples](#usage) above.
 
+### reportPath
+
+*reportPath* is the path to a text file to report output (optional).
+Output is also logged to the console.
+[examples](#usage) above.
+
+
+### exclusionFile is the path to a text file containing strings to exclude 
+from translation attribute identification
+[examples](#usage) above.
+
+### translationAttributes: an array of translation attribute to search for in element
+identified in the replacements.from data
+[examples](#usage) above.
 
 ### from
 
@@ -214,37 +231,9 @@ which is a requested feature.
 in alignment with the Grunt 4.0 convention of having standard 'files' and 'options' objects.
 
 
-## slanders770/grunt-match-replace History
-- v0.4.3 - 2015/02/11 Ability to specify strings to search for with the matched string found through regex
-- v0.4.2 - 2015/02/02 renamed reference to grunt-text-replace to grunt-match-replace
-- v0.4.1 - 2015/01/29 Forked from yoniholmes/grunt-text-replace 0.4.0
-
-## yoniholmes/grunt-text-replace History
-- v0.4.0 - 2014/11/23.  Dropping Node 0.8 support. Rewrote internals to prevent grunt-text-replace from make file changes where none are required. This was causing people difficulty with watch tasks.
-- v0.3.12 - 2014/06/03.  Minor update to docs - fix to a broken link.
-- v0.3.11 - 2014/02/09.  Added support for non-string or function 'to' replacements.
-- v0.3.10 - 2013/12/02.  Removed test for no source files found, accepting a pull request to do so. It's quite reasonable that you'd specify rewrite rules for files that may, or may not exist. Let me know if removing this is a problem for you.
-- v0.3.9 - 2013/10/26.  Copy amends in docs
-- v0.3.8 - 2013/09/22.  Minor data checking issue, merged from pull request.
-- v0.3.7 - 2013/08/26.  Bumped grunt requirements from 0.4.0 to 0.4.1 due to [changes to path API](http://gruntjs.com/blog/2013-03-13-grunt-0.4.1-released).
-- v0.3.6 - 2013/06/21.  Updated links in docs, some of which were pointing to 404 pages.
-- v0.3.5 - 2013/06/19.  Minor clean up of docs & package.json. No functional changes since 0.3.1.
-- v0.3.1 - 2013/02/18.  Minor feature addition: processTemplates: false to switch off grunt templates in function return statements.
-- v0.3.0 - 2013/02/17.  Updated to work in Grunt 4.0. This release is not backwards compatible with grunt 0.3.x.
-- v0.2.10 - 2012/12/21.  Minor internal refactor to better support globally installed instances of grunt on some systems.
-- v0.2.9 - 2012/11/26.  Fixed issue where overwrite: true was not working where multiple src files were defined.
-- v0.2.7 - 2012/11/25.  Fixed issue where replacing a string globally would fail
-if regex characters were present in string. This is no longer a problem.
-- v0.2.5 - 2012/11/23.  Function replacements now support grunt.template.
-- v0.2.0 - 2012/11/21.  Added tests, refactored internals, strings now replace
-globally within a file, updated documentation.
-- v0.1.0 - 2015/01/29 Forked from yoniholmes/grunt-text-replace
-Patch releases will generally remain undocumented in this release history.
-I'll do so if there's enough reason for it, such as a functionality tweak, or
-significant bug fix. For more detail see the source.
-
-
+## slanders770/grunt-translations History
+v0.0.1 - 02/11/2015 - "initial commit of source"
 
 ## License
-Copyright (c) 2013 Jonathan Holmes
+Copyright (c) 2013 Jonathon Holmes
 Licensed under the MIT license.
