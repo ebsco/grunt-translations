@@ -1,12 +1,12 @@
 /*
- * grunt-match-replace
- * http://as-gitmaster.corp.epnet.com/projects/RD/repos/grunt-match-replace
+ * grunt-translations
+ * https://github.com/ebsco/grunt-translations
  *
  * Copyright (c) 2015 Jonathan Holmes, Scott Landers
  * Licensed under the MIT license.
  */
 
-var gruntTextReplace = require('../lib/grunt-match-replace');
+var gruntTextReplace = require('../lib/grunt-translations');
 
 module.exports = function(grunt) {
 

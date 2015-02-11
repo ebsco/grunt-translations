@@ -1,20 +1,20 @@
 {
-  "name": "grunt-match-replace",
-  "description": "Replace text in files using strings, regexs or functions. Forked from yoniholmes/grunt-text-replace 0.4.0",
-  "version": "0.4.3",
-  "homepage": "https://www.npmjs.com/package/grunt-match-replace",
-  "author": "Jonathan Holmes, Scott Landers",
+  "name": "grunt-translations",
+  "description": "Grunt task to identify missing translation attributes in html file and html in javascript",
+  "version": "0.0.1",
+  "homepage": "https://www.npmjs.com/package/grunt-translations",
+  "author": "Scott Landers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ebsco/grunt-match-replace.git"
+    "url": "https://github.com/ebsco/grunt-translations.git"
   },
   "bugs": {
-    "url": "https://github.com/ebsco/grunt-match-replace/issues"
+    "url": "https://github.com/ebsco/grunt-translations/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/ebsco/grunt-match-replace/blob/master/LICENSE-MIT"
+      "url": "https://github.com/ebsco/grunt-translations/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
