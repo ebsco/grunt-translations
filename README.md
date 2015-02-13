@@ -91,7 +91,7 @@ It supports [minimatch][minimatch] paths.
 - file: `'path/output.txt'`
 - directory: `'path/'`
 
-grunt-text-replace will throw an error if multiple source files are mapped to
+grunt-translations will throw an error if multiple source files are mapped to
 a single file.
 
 
@@ -232,6 +232,7 @@ in alignment with the Grunt 4.0 convention of having standard 'files' and 'optio
 
 
 ## slanders770/grunt-translations History
+v0.0.3 - 02/13/2015 - "Updated exclusion file format to JSON to add flexibility to exclusions"
 v0.0.1 - 02/11/2015 - "initial commit of source"
 
 ## License

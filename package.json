@@ -1,7 +1,7 @@
 {
   "name": "grunt-translations",
   "description": "Grunt task to identify missing translation attributes in html file and html in javascript. Forked from yoniholmes/grunt-text-replace 0.4.0",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://www.npmjs.com/package/grunt-translations",
   "author": "Jonathon Holmes, Scott Landers",
   "repository": {
@@ -40,7 +40,6 @@
     "function"
   ],
   "dependencies": {
-    "colors": ">= 1.0.3",
-    "read-json-file": ">= 1.0.1"
+    "colors": ">= 1.0.3"
   }
 }
